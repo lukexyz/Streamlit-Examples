@@ -62,7 +62,9 @@ if st.checkbox("Activate Timer"):
         time.sleep(0.02)
         my_bar.progress(percent_complete + 1)
 
-
+# Slider
+level = st.slider("What is your level", 1, 5)
+if level: st.write(f"You're at level {level}, Nice!")
 
 """
 
