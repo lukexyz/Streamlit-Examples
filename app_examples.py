@@ -47,6 +47,10 @@ st.write("You selected: ", occupation)
 years = st.selectbox("Years Experience", list(range(10)))
 st.write("You selected: ", years)
 
+# MultiSelect
+location = st.multiselect("Pick a Location", ("London, UK", "Wellington, New Zealand", "Accra, Ghana"))
+if location: st.write("You selected: ", location)
+
 
 # Timers and Spinners
 if st.checkbox("Activate Timer"):
