@@ -62,14 +62,32 @@ if st.checkbox("Activate Timer"):
         time.sleep(0.02)
         my_bar.progress(percent_complete + 1)
 
-# Slider
-level = st.slider("What is your level", 1, 5)
-if level: st.write(f"You're at level {level}, Nice!")
 
 # Buttons
 st.button("Simple Button")
 if st.button("About"):
     st.text("You clicked the button. Well done!")
+
+
+# Text Input
+title = st.text_input('Enter Your Name', 'Type Name Here...')
+if st.button("Submit"): 
+    st.write('Your name is', title)
+
+
+# Slider
+level = st.slider("What is your level", 1, 5)
+if level: st.write(f"You're at level {level}, Nice!")
+
+# Functions
+# @st.cache
+def run_fn(s):
+    return f"{s}"
+st.write(run_fn(level))
+
+
+# Plot
+st.pyplot()
 
 """
 
