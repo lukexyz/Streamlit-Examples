@@ -1,4 +1,6 @@
 import streamlit as st
+import time
+
 
 # Titles
 st.title("Streamlit Examples")
@@ -30,6 +32,7 @@ st.image(img, caption='Streamlit', width=150)
 if st.checkbox("Show/Hide"):
     st.text("Showing Tickbox")
 
+
 # Radio
 status = st.radio("Radio button:", ("Active", "Inactive"))
 if status == 'Active':
@@ -37,6 +40,23 @@ if status == 'Active':
 else:
     st.warning("Inactive")
 
+# SelectBox
+occupation = st.selectbox("Your Occupation", ['Data Scientist', 'Machine Learning Engineer'])
+st.write("You selected: ", occupation)
+
+years = st.selectbox("Years Experience", list(range(10)))
+st.write("You selected: ", years)
+
+
+# Timers and Spinners
+if st.checkbox("Activate Timer"):
+    with st.spinner('Progress bar starting in 2 seconds...'):
+        time.sleep(2)
+        st.success('Done!')
+    my_bar = st.progress(0)
+    for percent_complete in range(100):
+        time.sleep(0.02)
+        my_bar.progress(percent_complete + 1)
 
 
 
