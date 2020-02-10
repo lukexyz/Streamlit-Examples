@@ -66,6 +66,11 @@ if st.checkbox("Activate Timer"):
 level = st.slider("What is your level", 1, 5)
 if level: st.write(f"You're at level {level}, Nice!")
 
+# Buttons
+st.button("Simple Button")
+if st.button("About"):
+    st.text("You clicked the button. Well done!")
+
 """
 
 > streamlit run app.py
