@@ -1,10 +1,13 @@
 import streamlit as st
 import cv2 
 from PIL import Image, ImageEnhance
-import numpy as numpy
+import numpy as np
 import os
 import time
 
+@st.cache
+def load_image(img):
+    return Image.open(img)
 
 
 def main():
@@ -27,6 +30,16 @@ def main():
                 my_bar.progress(percent_complete + 1)
             st.text('File uploaded.')
 
+            our_image = Image.open(image_file)
+            st.text("Original Image")
+            st.image(our_image)
+
+
+        enhance_type = st.sidebar.radio("Enhance Type", ["Original", "Gray-Scale", "Contrast", "Brightness"])
+        if enhance_type == 'Gray-Scale':
+            new_img = np.array(our_image.convert(('RGB')))
+            bw = cv2.cvtColor(new_img, cv2.COLOR_BGR2GRAY)
+            st.image(bw)
 
     elif choice == 'About':
         st.subheader('About')
