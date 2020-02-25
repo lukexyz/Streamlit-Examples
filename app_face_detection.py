@@ -40,6 +40,12 @@ def main():
             new_img = np.array(our_image.convert(('RGB')))
             bw = cv2.cvtColor(new_img, cv2.COLOR_BGR2GRAY)
             st.image(bw)
+        if enhance_type == 'Contrast':
+            c_rate = st.slider("Contrast", 0.5, 3.5)
+            enhancer = ImageEnhance.Contrast(our_image)
+            img_output = enhancer.enhance(c_rate)
+            st.image(img_output)
+
 
     elif choice == 'About':
         st.subheader('About')
