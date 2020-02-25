@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-
+import matplotlib.pyplot as plt
 
 # Titles
 st.title("Streamlit Examples")
@@ -91,6 +91,6 @@ st.pyplot()
 
 """
 
-> streamlit run app.py
+> streamlit run app_examples.py
 
 """
